@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <button class="btn btn-primary" id="login" onClick="PopUpShow()">LOGIN</button>
+    <button type="button" class="btn btn-primary" id="signIn" onClick="PopUpShow()">SIGN IN</button>
 
     <div id="popUp">
         <div id="loginPopUp">
@@ -19,11 +19,12 @@
                 <div class="form-group">
                     <input type="text" class="form-control" name="firstName" placeholder="Enter Your Name" required>
                 </div>
-                <div>
-                    <input type="password" class="form-control" name="password" placeholder="Password" minlenght="6" required>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" minlength="6" required>
                 </div>
-                <button type="submit" class="btn btn-primary">LOGIN</button>
+                <button type="submit" class="btn btn-primary">SIGN IN</button>
             </form>
+            
         </div>
     </div>
 
@@ -32,14 +33,19 @@
     ?>
 </body>
 
+<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
 <script>
-    //Function to show PopUp
+    $(document).ready(function(){
+        //Скрыть PopUp при загрузке страницы    
+        PopUpHide();
+    });
+    //Функция отображения PopUp
     function PopUpShow(){
-        document.getElementById("popUp").style.visibility = "visible";
+        $("#popUp").show();
     }
-    //Function to hide PopUp
+    //Функция скрытия PopUp
     function PopUpHide(){
-        document.getElementById("popUp").style.visibility = "hidden";
+        $("#popUp").hide();
     }
 </script>
 

@@ -8,12 +8,17 @@
 }
 
 #loginPopUp{
-    margin: 40px auto 0px auto;
-    width: 30%;
     padding: 10px;
     background-color: #c5c5c5;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #000;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
 }
 
 #closePopUp{

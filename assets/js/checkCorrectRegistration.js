@@ -1,9 +1,9 @@
 let password = document.getElementById("password");
-let confirm_password = document.getElementById("confirmPassword");
+let confirm_password = document.getElementById("confirm_password");
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Пароли не совпадают!");
+    confirm_password.setCustomValidity('Passwords do not match');
   } else {
     confirm_password.setCustomValidity('');
   }

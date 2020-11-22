@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../assets/css/boostrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/popUpLogin.css">
-    <link rel="stylesheet" href="../assets/css/horizontalCentralize.css">
+    <link rel="stylesheet" href="../../assets/css/boostrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/popUpLogin.css">
+    <link rel="stylesheet" href="../../assets/css/horizontalCentralize.css">
 </head>
 
 <body>
@@ -12,11 +12,11 @@
     <div class="horizontalCentralizeContent">
         <div class="buttons">
             <button type="button" class="btn btn-primary" id="signIn" onClick="PopUpShow()">SIGN IN</button>
-            <button type="button" class="btn btn-primary" id="signUp" onClick="document.location='./registration.html'">SIGN UP</button>
+            <button type="button" class="btn btn-primary" id="signUp" onClick="document.location='../registration.html'">SIGN UP</button>
         </div>
         
         <?php
-            require_once('./getTableWithAllUsers.php'); //print table with all users
+            require_once('../getTableWithAllUsers.php'); //print table with all users
         ?>
     </div>
     
@@ -28,10 +28,10 @@
             </div>
             <form action="" method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="firstName" placeholder="Enter Your Name" required>
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Password" minlength="6" required>
+                    <input type="password" class="form-control" name="password" placeholder="Password" required>
                 </div>
                 <div class="buttons">
                     <button type="submit" class="btn btn-primary">SIGN IN</button>

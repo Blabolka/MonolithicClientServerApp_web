@@ -1,24 +1,31 @@
 <table class="table">
     <thead>
-        <th scope="col">#</th>
-        <th scope="col">First Name</th> 
-        <th scope="col">Last Name</th>
-        <th scope="col">Role</th>
+        <th>#</th>
+        <th>First Name</th> 
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Role</th>
     </thead>
     <tbody>
         <?php
-            $db = require_once('../database/db.php');
+            $db = require_once('../../database/db.php');
 
-            $query = "SELECT id, firstName, lastName, id_role FROM users";
-            $result = mysqli_query($conn, $query);
-            if($result){
-                while($row = mysqli_fetch_array($result)){
+            $queryUser = "SELECT id, first_name, last_name, email, id_role FROM users";
+            $resultUser = mysqli_query($conn, $queryUser);
+
+            if($resultUser){
+                while($rowUser = mysqli_fetch_array($resultUser)){
                     echo "<tr>";
-                    for($j=0 ; $j<4 ; $j++){
-                        echo "<td>$row[$j]</td>";
-                    }
+                        echo "<td>".$rowUser['id']."</td>";
+                        echo "<td>".$rowUser['first_name']."</td>";
+                        echo "<td>".$rowUser['last_name']."</td>";
+                        echo "<td>".$rowUser['email']."</td>";
+
+                        $queryRole = "SELECT title FROM roles WHERE id = '{$rowUser['id_role']}'";
+                        $resultRole = mysqli_query($conn, $queryRole);
+                        $rowRole = mysqli_fetch_array($resultRole);
+                        echo "<td>".$rowRole['title']."</td>";
                     echo "</tr>";
-                    break;
                 }
             }
         ?>

@@ -26,7 +26,7 @@
             <div class="form-group" id="closePopUp">
                 <button class="btn btn-danger" onClick="PopUpHide()">X</button>
             </div>
-            <form action="" method="post">
+            <form action="../../setSession.php" method="post">
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Email" required>
                 </div>

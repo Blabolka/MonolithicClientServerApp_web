@@ -7,7 +7,7 @@
         <th>Role</th>
     </thead>
     <tbody>
-        <?php
+        <?php            
             $db = require_once('../../database/db.php');
 
             $queryUser = "SELECT id, first_name, last_name, email, id_role FROM users";
@@ -16,7 +16,13 @@
             if($resultUser){
                 while($rowUser = mysqli_fetch_array($resultUser)){
                     echo "<tr>";
-                        echo "<td>".$rowUser['id']."</td>";
+
+                        echo "<td>";
+                            echo '<form action="../profile/profile.php" method="get">';
+                                echo '<button type="submit" class="btn btn-secondary" name="id" value="' .$rowUser['id']. '">' .$rowUser['id']. '</button>';
+                            echo '</form>';
+                        echo "</td>";
+
                         echo "<td>".$rowUser['first_name']."</td>";
                         echo "<td>".$rowUser['last_name']."</td>";
                         echo "<td>".$rowUser['email']."</td>";

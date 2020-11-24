@@ -2,14 +2,9 @@
 <html>
 <head>
     <link rel="stylesheet" href="../../assets/css/boostrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/centralize.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
-<style>
-    img{
-        border: 1px solid #000000;
-    }
-</style>
 <body>
     <?php
         session_start();
@@ -36,4 +31,7 @@
         }
     ?>
 </body>
+
+<script src="../../assets/js/checkCorrectRegistration.js"></script>
+
 </html>

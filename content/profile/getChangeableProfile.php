@@ -11,12 +11,21 @@
 ?>
 
 <div class="absoluteCentralizeContent">
-    
-    <div class="horizontalCentralizeContentProfile">
-        <img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">
+
+    <div class="img-group">
+        <div class="horizontalCentralizeContentProfile">
+            <img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">
+            <div class="input-group mb-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile">
+                    <label class="custom-file-label" for="inputGroupFile">Choose photo</label>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <form action="" method="patch">
+
+    <form action="../../database/updateUserInfo.php" method="post">
         <div class="form-group">
             <?php
                 echo '<input type="text" class="form-control" name="first_name" value="' .$user['first_name']. '" required>';
@@ -33,19 +42,26 @@
             ?>
         </div>
         <div class="form-group">
-            <select class="custom-select" name="id_role" required>
-                <option value="1">User</option>
-                <option value="2">Admin</option>
+            <select class="custom-select" name="id_role" required> 
+                <?php if($user['id_role'] == 1): ?>
+                    <option selected value="1">User</option>
+                    <option value="2">Admin</option>
+                <?php elseif($user['id_role'] == 2):?>
+                    <option value="1">User</option>
+                    <option selected value="2">Admin</option>
+                <?php endif; ?>
             </select>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
+            <input type="password" class="form-control" name="password" id="password" minlength="6" placeholder="Password" required>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" minlength="6" placeholder="Confirm password" required>
+            <input type="password" class="form-control" minlength="6" id="confirm_password" minlength="6" placeholder="Confirm password" required>
         </div>
         <div class="buttons">
-            <button type="submit" class="btn btn-secondary">EDIT</button>
+            <?php
+                echo '<button type="submit" class="btn btn-secondary" name="id" value="' .$_GET['id']. '">EDIT</button>';
+            ?>
         </div>
     </form>
     

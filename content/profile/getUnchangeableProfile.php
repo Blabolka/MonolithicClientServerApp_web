@@ -13,7 +13,9 @@
 <div class="absoluteCentralizeContent">
 
     <div class="horizontalCentralizeContentProfile">
-        <img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">
+        <div class="img-group">
+            <img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">
+        </div>
     </div>
     
     <form action="">

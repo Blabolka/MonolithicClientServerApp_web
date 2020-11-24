@@ -11,6 +11,11 @@
 ?>
 
 <div class="absoluteCentralizeContent">
+    
+    <div class="horizontalCentralizeContentProfile">
+        <img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">
+    </div>
+    
     <form action="">
         <div class="form-group">
             <?php

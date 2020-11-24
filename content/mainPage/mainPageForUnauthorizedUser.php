@@ -4,12 +4,12 @@
 <head>
     <link rel="stylesheet" href="../../assets/css/boostrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/popUpLogin.css">
-    <link rel="stylesheet" href="../../assets/css/horizontalCentralize.css">
+    <link rel="stylesheet" href="../../assets/css/centralize.css">
 </head>
 
 <body>
     
-    <div class="horizontalCentralizeContent">
+    <div class="horizontalCentralizeContentMainPage">
         <div class="buttons">
             <button type="button" class="btn btn-primary" id="signIn" onClick="PopUpShow()">SIGN IN</button>
             <button type="button" class="btn btn-primary" id="signUp" onClick="document.location='../registration.html'">SIGN UP</button>

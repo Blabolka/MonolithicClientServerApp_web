@@ -7,7 +7,7 @@
 
     <body>
         <div class="absoluteCentralizeContent">
-            <form action="../database/addNewPersonFromRegister.php" method="post">
+            <form action="../database/addNewPerson.php" method="post">
                 <div class="form-group">
                     <input type="text" class="form-control" name="first_name" placeholder="Enter first name" required>
                 </div>
@@ -24,17 +24,13 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" minlength="6" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" minlength="6" required>
+                    <input type="password" class="form-control" name="password" placeholder="Password" minlength="6" required>
                 </div>
                 <div class="buttons">
-                    <button type="button" class="btn btn-secondary" onClick = "document.location='./mainPage/mainPageForUnauthorizedUser.php'">TO MAIN PAGE</button>
-                    <button type="submit" class="btn btn-primary">SIGN UP</button>
+                    <button type="button" class="btn btn-secondary" onClick = "document.location='./mainPage/mainPageForAdmin.php'">TO MAIN PAGE</button>
+                    <button type="submit" class="btn btn-primary">ADD</button>
                 </div>
             </form>
         </div>
     </body>
-    <script src="../assets/js/checkCorrectRegistration.js"></script>
 </html>

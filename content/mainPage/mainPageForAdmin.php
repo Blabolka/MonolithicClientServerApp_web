@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="../../assets/css/boostrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/horizontalCentralize.css">
+    <link rel="stylesheet" href="../../assets/css/centralize.css">
 </head>
 
 <style>
@@ -14,7 +14,7 @@
 
 <body>
     
-    <div class="horizontalCentralizeContent">
+    <div class="horizontalCentralizeContentMainPage">
         <div class="buttons">
             <form action="../profile/profile.php" method="get">
                 <?php
@@ -38,7 +38,7 @@
         ?>
         
         <div class="buttons">
-            <button type="button" class="btn btn-secondary">ADD USER</button>
+            <button type="button" class="btn btn-secondary" onClick="document.location='../registrationAdmin.html'">ADD USER</button>
         </div>
     </div>
 

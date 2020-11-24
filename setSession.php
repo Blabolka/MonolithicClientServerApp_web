@@ -10,14 +10,7 @@
         $row = mysqli_fetch_array($result);
         $_SESSION['email'] = $row['email'];
         $_SESSION['id_role'] = $row['id_role'];
-
-        if($_SESSION['id_role'] == 1){
-            header("Location: ./content/mainPage/mainPageForAuthorizedUser.php");
-        }else if($_SESSION['id_role'] == 2){
-            header("Location: ./content/mainPage/mainPageForAdmin.php");
-        }
-        
-    }else{
-        header("Location: ./content/mainPage/mainPageForUnauthorizedUser.php");
     }
+
+    header("Location: ./content/mainPage/mainPage.php");
 ?>

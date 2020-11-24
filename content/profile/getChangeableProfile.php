@@ -16,7 +16,7 @@
         <img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">
     </div>
     
-    <form action="">
+    <form action="" method="patch">
         <div class="form-group">
             <?php
                 echo '<input type="text" class="form-control" name="first_name" value="' .$user['first_name']. '" required>';
@@ -43,6 +43,17 @@
         </div>
         <div class="form-group">
             <input type="password" class="form-control" minlength="6" placeholder="Confirm password" required>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn btn-secondary">EDIT</button>
+        </div>
+    </form>
+    
+    <form action="../../database/deleteUser.php" method="post">
+        <div class="buttons">
+            <?php
+                echo '<button type="submit" class="btn btn-danger" name="id" value="' .$_GET['id']. '">DELETE</button>';
+            ?>
         </div>
     </form>
 </div>

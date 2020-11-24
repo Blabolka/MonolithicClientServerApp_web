@@ -14,10 +14,6 @@
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['id_role'] = $_POST['id_role'];
 
-        if($_POST['id_role'] == 1){
-            header("Location: ../content/mainPage/mainPageForAuthorizedUser.php");
-        }else if($_POST['id_role'] == 2){
-            header("Location: ../content/mainPage/mainPageForAdmin.php");
-        }
+        header("Location: ../content/mainPage/mainPage.php");
     }
 ?>

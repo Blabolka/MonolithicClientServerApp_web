@@ -3,5 +3,5 @@
     unset($_SESSION['email']);
     unset($_SESSION['id_role']);
     session_destroy();
-    header("Location: ./content/mainPage/mainPageForUnauthorizedUser.php");
+    header("Location: ./content/mainPage/mainPage.php");
 ?>

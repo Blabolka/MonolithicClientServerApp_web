@@ -1,7 +1,7 @@
 <?php
     require_once('../../database/db.php');
     
-    $queryUser = "SELECT first_name, last_name, email, password, id_role FROM users WHERE id = '{$_GET['id']}'";
+    $queryUser = "SELECT first_name, last_name, email, password, id_role, photo FROM users WHERE id = '{$_GET['id']}'";
     $resultUser = mysqli_query($conn, $queryUser);
     $user = mysqli_fetch_array($resultUser);
 
@@ -14,13 +14,30 @@
 
     <div class="img-group">
         <div class="horizontalCentralizeContentProfile">
-            <img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">
-            <div class="input-group mb-3">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile">
-                    <label class="custom-file-label" for="inputGroupFile">Choose photo</label>
+            <?php
+                if($user['photo'] == ''){
+                    echo '<img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">';
+                }else{
+                    if(file_exists("../../public/images/{$user['photo']}")){
+                        echo '<img src="../../public/images/' .$user['photo']. '" alt="" width="150" height="150">';
+                    }else{
+                        echo '<img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">';
+                    }
+                }
+            ?>
+
+            <form class="horizontalCentralizeContentProfile" action="../../database/updateUserPhoto.php" method="post" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile" name="fileToUpload">
+                        <label class="custom-file-label" for="inputGroupFile">Choose photo</label>
+                    </div>
                 </div>
-            </div>
+                <?php
+                    echo '<button type="submit" class="btn btn-primary" style="width: 50%;" name="id" value="' .$_GET['id']. '">UPDATE PHOTO</button>';
+                ?>
+            </form>
+            
         </div>
     </div>
     
@@ -42,7 +59,7 @@
             ?>
         </div>
         <div class="form-group">
-            <select class="custom-select" name="id_role" required> 
+            <select class="custom-select" name="id_role" id="roleControll"> 
                 <?php if($user['id_role'] == 1): ?>
                     <option selected value="1">User</option>
                     <option value="2">Admin</option>
@@ -72,4 +89,7 @@
             ?>
         </div>
     </form>
+    <button class="btn btn-secondary" onClick = "document.location='../mainPage/mainPage.php'">TO MAIN PAGE</button>
+
+    <script>document.getElementById("roleControll").disabled = true;</script>
 </div>

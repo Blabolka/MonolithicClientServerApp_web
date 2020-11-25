@@ -1,7 +1,7 @@
 <?php
     require_once('../../database/db.php');
     
-    $queryUser = "SELECT first_name, last_name, email, id_role FROM users WHERE id = '{$_GET['id']}'";
+    $queryUser = "SELECT first_name, last_name, email, id_role, photo FROM users WHERE id = '{$_GET['id']}'";
     $resultUser = mysqli_query($conn, $queryUser);
     $user = mysqli_fetch_array($resultUser);
 
@@ -12,9 +12,19 @@
 
 <div class="absoluteCentralizeContent">
 
-    <div class="horizontalCentralizeContentProfile">
-        <div class="img-group">
-            <img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">
+    <div class="img-group">
+        <div class="horizontalCentralizeContentProfile">
+            <?php
+                if($user['photo'] == ''){
+                    echo '<img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">';
+                }else{
+                    if(file_exists("../../public/images/{$user['photo']}")){
+                        echo '<img src="../../public/images/' .$user['photo']. '" alt="" width="150" height="150">';
+                    }else{
+                        echo '<img src="../../assets/img/defaultUserIcon.jpg" alt="" width="150" height="150">';
+                    }
+                }
+            ?> 
         </div>
     </div>
     
@@ -40,4 +50,5 @@
             ?>
         </div>
     </form>
+    <button class="btn btn-secondary" onClick = "document.location='../mainPage/mainPage.php'">TO MAIN PAGE</button>
 </div>

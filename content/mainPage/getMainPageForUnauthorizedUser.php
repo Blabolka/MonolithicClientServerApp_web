@@ -1,7 +1,7 @@
 <div class="horizontalCentralizeContentMainPage">
-    <div class="buttons">
+    <div class="buttons" style="margin: 10px 0;">
         <button type="button" class="btn btn-primary" id="signIn" onClick="PopUpShow()">SIGN IN</button>
-        <button type="button" class="btn btn-primary" id="signUp" onClick="document.location='../registration.html'">SIGN UP</button>
+        <button type="button" class="btn btn-primary" id="signUp" onClick="document.location='../registration/registration.html'">SIGN UP</button>
     </div>
 
     <?php

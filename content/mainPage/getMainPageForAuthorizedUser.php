@@ -1,5 +1,5 @@
 <div class="horizontalCentralizeContentMainPage">
-    <div class="buttons">
+    <div class="buttons" style="margin: 10px 0;">
         <form action="../profile/profile.php" method="get">
             <?php
                 require_once("../../database/db.php");
